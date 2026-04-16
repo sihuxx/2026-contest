@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body {display: flex;justify-content: center;align-items: center;height: 100vh;width: 100vw;}
+        div {background-color: red;width: 100px;height: 100px;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    const box = document.querySelector(".box")
+    let x = 0, y = 0
+    const moves = {
+        "ArrowUp" : [0, -10], "ArrowDown" :[0, 10],
+        "ArrowLeft": [-10, 0], "ArrowRight" : [10, 0]
+    }
+    window.addEventListener("keydown" ,(e) => {
+        if(!moves[e.key]) return
+        const [dx, dy] = moves[e.key]
+        const limitX = (window.innerWidth - box.offsetWidth) / 2
+        const limitY = (window.innerHeight - box.offsetHeight) / 2
+        x = Math.max(-limitX, Math.min(limitX, x + dx))
+        y = Math.max(-limitY, Math.min(limitY, y + dy))
+        console.log(x, y);
+        
+        box.style.transform = `translate(${x}px, ${y}px)`
+    })
+</script>
+</html>

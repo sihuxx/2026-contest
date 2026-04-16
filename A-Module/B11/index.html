@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;}
+         body {display: flex;justify-content: center;align-items: center;height: 100vh;flex-direction: column;gap: 20px;}
+         .time-con {display: flex;font-size: 40px;}
+         .btn-con {display: flex;gap: 10px;}
+         button {padding: 5px 10px;}
+    </style>
+</head>
+
+<body>
+    <h1>스톱워치</h1>
+    <div class="time-con">
+        <div id="minute">00</div>:
+        <div id="second">00</div>:
+        <div id="mili">000</div>
+    </div>
+    <div class="btn-con">
+        <div id="container">
+            <button onclick="render()">시작</button>
+        </div>
+        <button onclick="location.reload()">초기화</button>
+    </div>
+</body>
+<script>
+    let startTime = 0, elapsed = 0, id = null, run = false
+
+    function timer(now) {
+        const time = now - startTime + elapsed
+
+        minute.innerHTML = String(Math.floor(time / 60000)).padStart(2, 0)
+        second.innerHTML = String(Math.floor((time % 60000) / 1000)).padStart(2, 0)
+        mili.innerHTML = String(Math.floor(time % 1000)).padStart(3, 0)
+
+        id = requestAnimationFrame(timer)
+    }
+    function render() {
+        run = !run
+        if(run) {
+            id = requestAnimationFrame(timer)
+            startTime = performance.now()
+            container.innerHTML = ` <button onclick="render()">중지</button>`
+        } else {
+            cancelAnimationFrame(id)
+            elapsed += performance.now() - startTime
+            container.innerHTML = ` <button onclick="render()">계속</button>`
+        }
+    }
+</script>
+
+</html>

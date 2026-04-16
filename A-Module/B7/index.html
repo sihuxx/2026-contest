@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {display: flex;justify-content: center;align-items: center;height: 100vh;}
+        .container {display: flex;gap: 20px;}
+        input {padding: 30px;width: 40px;font-size: 20px;}
+        button {padding: 30px;}
+    </style>
+</head>
+<body>
+   <div class="container">
+     <input type="text" maxlength="1">
+    <input type="text" maxlength="1">
+    <input type="text" maxlength="1">
+    <input type="text" maxlength="1">
+    <input type="text" maxlength="1">
+    <input type="text" maxlength="1">
+    <button id="btn" disabled>전송하기</button>
+   </div>
+</body>
+<script>
+    const inputs = [...document.querySelectorAll("input")]
+    inputs.forEach((input, i) => {
+        input.addEventListener("keydown", (e) => {
+            if(e.key === "Backspace") {
+                if(input.value === "") {
+                    inputs[i - 1]?.focus()
+                }
+            }
+        }) 
+        input.addEventListener("input", () => {
+            input.value = input.value.replace(/[^0-9]/g, "")
+            if(input.value.length === 1) {
+                inputs[i + 1]?.focus()
+            }
+            btn.disabled = inputs.every(input => input.value.length > 0) ? "" : "disabled"
+        })
+    })
+</script>
+</html>

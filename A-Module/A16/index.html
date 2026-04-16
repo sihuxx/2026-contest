@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;list-style: none;text-decoration: none;box-sizing: border-box;}
+        body {display: flex;justify-content: center;align-items: center;height: 100vh;}
+        .container {display: flex;flex-direction: column;gap: 20px;}
+        .top {display: flex;align-items: center;gap: 40px;}
+        .top .cir {width: 60px;height: 60px;border-radius: 50%;display: block;background-color: black;}
+        .cir1 {background-color: rgb(129, 177, 44) !important;}
+        .cir2 {background-color: rgb(46, 118, 226) !important;}
+        .line {width: 200px;height: 5px;border-radius: 10px;}
+        .l1 {background-color: rgb(129, 177, 44);}
+        .l2 {background-color: rgb(133, 198, 255);}
+        .cir3 {background-color: rgb(133, 198, 255) !important;}
+        .bot {display: flex;align-items: center;gap: 190px;}
+        .card {display: flex;flex-direction: column;gap: 5px;}
+        p {color: gray;}
+        .s1 {color: rgb(129, 177, 44);}
+        .s2 {color: rgb(46, 118, 226);}
+        .s3 {color: gray;}
+        h1 {font-size: 25px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+        <div class="cir cir1"></div>
+        <div class="line l1"></div>
+        <div class="cir cir2"></div>
+        <div class="line l2"></div>
+        <div class="cir cir3"></div>
+    </div>
+    <div class="bot">
+        <div class="card">
+            <p>STEP 1</p>
+            <h1>Card Details</h1>
+            <span class="s1">완료</span>
+        </div>
+        <div class="card">
+            <p>STEP 2</p>
+            <h1>Form Review</h1>
+            <span class="s2">진행 중</span>
+        </div>
+        <div class="card">
+            <p>STEP 3</p>
+            <h1>Authentication</h1>
+            <span class="s3">대기 중</span>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

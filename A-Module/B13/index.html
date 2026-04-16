@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {width: 600px;}
+        body{display: flex;justify-content: center;align-items: center;flex-direction: column;gap: 20px;height: 100vh;}
+        .btns {display: flex;gap: 10px;}
+        button{padding: 5px 10px;}
+        .time-con {font-size: 20px;display: flex;}
+    </style>
+</head>
+
+<body>
+    <video src="./test-video.mp4" id="video"></video>
+    <div class="btns">
+        <button id="play">일시정지/재생</button>
+        <button id="tenMin">10초 되감기</button>
+        <button id="tenPlus">10초 빨리감기</button>
+        <button id="sound">음소거</button>
+    </div>
+    <div class="time-con"><div id="time"></div>/02:05</div>
+</body>
+<script>
+    let run = false
+    play.onclick = () => {
+        run = !run
+        run ? video.play() : video.pause()
+    }
+    tenMin.onclick = () => video.currentTime -=10
+    tenPlus.onclick = () => video.currentTime +=10
+    sound.onclick = () => video.muted = !video.muted
+    
+    setInterval(() => {
+        time.innerHTML = `${String(Math.floor(video.currentTime / 60)).padStart(2,0)}:${String(Math.floor(video.currentTime % 60)).padStart(2,0)}`
+    }, 10)
+</script>
+
+</html>

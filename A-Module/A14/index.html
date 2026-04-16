@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {display: flex;align-items: center;justify-content: center;height: 100vh;}
+        ul {display: flex;gap: 50px;}
+        button {position: relative;}
+        .btn1::after{opacity: 0;content: attr(data-tip);position: absolute;top: 10px;width: 240px;font-size: 12px;top: -25px;right: 0px;}
+        .btn1:hover::after{opacity: 1;}
+        .btn1:focus::after{opacity: 1;}
+        .btn2::after{opacity: 0;content: attr(data-tip);position: absolute;top: 10px;width: 240px;font-size: 12px;top: 0;left: 50px;}
+        .btn2:hover::after{opacity: 1;}
+        .btn2:focus::after{opacity: 1;}
+    </style>
+</head>
+<body>
+    <ul>
+        <button class="btn1" data-tip="'설정' 버튼을 눌러 서비스를 설정할 수 있습니다.">설정</button>
+        <button class="btn2" data-tip="로그아웃되고 메인페이지로 이동합니다.">로그인</button>
+    </ul>
+</body>
+</html>

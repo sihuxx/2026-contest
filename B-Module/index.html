@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스킬스북도서관</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
+</head>
+
+<body>
+    <input type="checkbox" name="popup" id="close" hidden>
+    <div class="popup-backdrop">
+        <div class="popup">
+            <img src="./asset/images/images (1).png" alt="팝업 이미지" title="팝업 이미지">
+            <div class="popup-content">
+                <h3>2025년 지방기능경기대회 참가원서 접수 공고사항을 아래 같이 알려드립니다.</h3>
+                <div>
+                    <p>□ 접수기간 : 2025. 1. 13.(월) ～ 1. 24.(금) 18:00 마감 [12일간]</p>
+                    <p>□ 대상직종 : 웹디자인및개발 등 48개 직종</p>
+                    <p>□ 접수방법 : 마이스터넷 홈페이지 인터넷 접수</p>
+                </div>
+                <label for="close" class="gb close-btn">닫기</label>
+            </div>
+        </div>
+    </div>
+    <input type="radio" name="sign" id="signOpen">
+    <input type="radio" name="sign" id="signClose">
+
+    <div class="sign-modal-backdrop">
+        <div class="sign-modal">
+            <div class="sign-header">
+                <h3>로그인</h3>
+                <label for="signClose">×</label>
+            </div>
+            <form action="" method="post">
+                <input type="text" name="id" placeholder="아이디를 입력해주세요">
+                <input type="text" name="pw" placeholder="비밀번호를 입력해주세요">
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="./index.html" class="logo">
+                <img src="./asset/gimp/logo.png" alt="로고" title="로고">
+            </a>
+            <nav class="nav1 gb">
+                <ul>
+                    <li class="has-sub">
+                        <input class="focus-trap">
+                        <label class="menu-label">도서관소개</label>
+                        <ul class="sub gb">
+                            <li><a href="./sub.html">도서관소개</a></li>
+                            <li><a href="#">도서관현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <input class="focus-trap">
+                        <label class="menu-label">도서자료실</label>
+                        <ul class="sub gb">
+                            <li><a href="#">자료실</a></li>
+                            <li><a href="#">열람실예약</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <input class="focus-trap">
+                        <label class="menu-label">회원서비스</label>
+                        <ul class="sub gb">
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">마이페이지</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>도서검색</label>
+                    </li>
+                    <li>
+                        <label>도서관리자</label>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav2 yb">
+                <ul>
+                    <li><label for="signOpen">로그인</label></li>
+                    <li><label for="">회원가입</label></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="visual-content">
+            <img src="./asset/gimp/background.png" alt="슬라이드 배경" class="background" title="슬라이드 배경">
+            <div class="image-slider">
+                <ul>
+                    <li><img src="./asset/images/images (3).jpg" alt="슬라이드1" title="슬라이드1"></li>
+                    <li><img src="./asset/images/images (50).jpg" alt="슬라이드2" title="슬라이드2"></li>
+                    <li><img src="./asset/images/images (53).jpg" alt="슬라이드3" title="슬라이드3"></li>
+                    <li><img src="./asset/images/images (3).jpg" alt="슬라이드1" title="슬라이드1"></li>
+                </ul>
+            </div>
+            <div class="text-slider">
+                <ul>
+                    <div class="text-con t1">
+                        <p>모든 기능인들을 위한 도서관</p>
+                        <h1>Every Skills <br> Books</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, deserunt.</p>
+                    </div>
+                    <div class="text-con t2">
+                        <p>편리한 열람실 예약 시스템</p>
+                        <h1>Smart <br> Reservation</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, consequatur!</p>
+                    </div>
+                    <div class="text-con t3">
+                        <p>SOC 리모델링을 통한 재개관</p>
+                        <h1>Libray <br> Reopen</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sint.</p>
+                    </div>
+                    <div class="text-con t1">
+                        <p>모든 기능인들을 위한 도서관</p>
+                        <h1>Every Skills <br> Books</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, deserunt.</p>
+                    </div>
+                </ul>
+            </div>
+            <div class="progress-bar"><span></span></div>
+        </div>
+    </main>
+    <section>
+        <article>
+            <input type="radio" name="tab" id="t1" hidden checked>
+            <input type="radio" name="tab" id="t2" hidden>
+            <input type="radio" name="tab" id="t3" hidden>
+
+            <div class="inner-content">
+                <div class="title-box">
+                    <p>도서관 소식</p>
+                    <h3>Library News</h3>
+                </div>
+                <div class="news-content">
+                    <div class="news-header gb">
+                        <div class="tab-background yb"></div>
+                        <label for="t1">일반공지</label>
+                        <label for="t2">행사안내</label>
+                        <label for="t3">채용안내</label>
+                    </div>
+                    <div class="news-main">
+                        <div class="tab-content tab-con1">
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>더운 여름 힘내요 – 연구정보실 개실 6주년 기념이벤트 당첨자 발표</h3>
+                                </div>
+                                <p>2024-08-08</p>
+                            </div>
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>더운 여름 힘내요 – 연구정보실 개실 6주년 기념이벤트</h3>
+                                </div>
+                                <p>2024-07-24</p>
+                            </div>
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>연구자를 위한 텍스트 마이닝(심화) 교육생 모집 안내</h3>
+                                </div>
+                                <p>2024-07-17</p>
+                            </div>
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>「실감체험관」 전국민 소문내기 이벤트 당첨자 발표</h3>
+                                </div>
+                                <p>2024-06-10</p>
+                            </div>
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>디지털인문학과 네트워크 분석 교육생 모집 안내</h3>
+                                </div>
+                                <p>2024-05-14</p>
+                            </div>
+                            <div class="news">
+                                <div><span>공지</span>
+                                    <h3>스킬스북도서관 -「청년 디지털 봉사단 ‘잇(IT)다’5기」- 최종 합격자 발표</h3>
+                                </div>
+                                <p>2024-05-10</p>
+                            </div>
+                        </div>
+                        <div class="tab-content tab-con2">
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>2024년 제9회 「월간 인문학을 만나다」 강연 안내</h3>
+                                </div>
+                                <p>2024-08-08</p>
+                            </div>
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>「스킬스북도서관이 간식박스 쏩니다!」7월 당첨 발표</h3>
+                                </div>
+                                <p>2024-08-07</p>
+                            </div>
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>별 헤는 「실감체험관」이벤트</h3>
+                                </div>
+                                <p>2024-07-25</p>
+                            </div>
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>2024년 제8회 「월간 인문학을 만나다」 강연 안내</h3>
+                                </div>
+                                <p>2024-07-15</p>
+                            </div>
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>스킬스북도서관이 간식박스 쏩니다!</h3>
+                                </div>
+                                <p>2024-07-02</p>
+                            </div>
+                            <div class="news">
+                                <div><span>행사</span>
+                                    <h3>2024년 제7회 「월간 인문학을 만나다」 강연 안내</h3>
+                                </div>
+                                <p>2024-07-01</p>
+                            </div>
+                        </div>
+                        <div class="tab-content tab-con3">
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>2024년 사서직 공무원 경력경쟁채용 필기시험 정답가안 공개 및 이의제기 안내</h3>
+                                </div>
+                                <p>2024-08-03</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>스킬스북도서관 공무직 근로자(미화) 채용 서류전형 합격자 및 면접전형 공고</h3>
+                                </div>
+                                <p>2024-08-02</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>2024년도 사서직 공무원 경력경쟁채용 필기시험 일정 ‧ 장소 및 응시자 준수사항 공고</h3>
+                                </div>
+                                <p>2024-07-26</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>스킬스북도서관 공무직 근로자(미화) 채용공고(재재공고)</h3>
+                                </div>
+                                <p>2024-07-24</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>스킬스북도서관 국가서지과 공무직 근로자 채용 최종 합격자 공고</h3>
+                                </div>
+                                <p>2024-07-18</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>스킬스북도서관 국가서지과 기간제 근로자(휴직대체) 채용 최종합격자 공고</h3>
+                                </div>
+                                <p>2024-07-16</p>
+                            </div>
+                            <div class="news">
+                                <div><span>채용</span>
+                                    <h3>스킬스북도서관 국가서지과 공무직 근로자 채용 서류전형(1차) 합격자 발표 및 면접시험(2차) 계획 공고</h3>
+                                </div>
+                                <p>2024-07-05</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="inner-content">
+                <div class="title-box">
+                    <p>자주찾는 메뉴</p>
+                    <h3>Quick Links</h3>
+                </div>
+                <div class="quick-content">
+                    <div class="quick">
+                        <div class="quick-info">
+                            <img src="./asset/gimp/quick1.png" alt="메뉴" title="메뉴">
+                            <h3>도서대출</h3>
+                        </div>
+                    </div>
+                    <div class="quick">
+                        <div class="quick-info">
+                            <i class="fas fa-book"></i>
+                            <h3>도서반납</h3>
+                        </div>
+                    </div>
+                    <div class="quick">
+                        <div class="quick-info">
+                            <img src="./asset/gimp/quick2.png" alt="메뉴" title="메뉴">
+                            <h3>좌석예약</h3>
+                        </div>
+                    </div>
+                    <div class="quick">
+                        <div class="quick-info">
+                            <img src="./asset/gimp/quick4.png" alt="메뉴" title="메뉴">
+                            <h3>희망도서신청</h3>
+                        </div>
+                    </div>
+                    <div class="quick">
+                        <div class="quick-info">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI추천도서</h3>
+                        </div>
+                    </div>
+                    <div class="quick">
+                        <div class="quick-info">
+                            <img src="./asset/gimp/quick3.png" alt="메뉴" title="메뉴">
+                            <h3>전자도서관</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="inner-content">
+                <div class="title-box">
+                    <p>프로그램</p>
+                    <h3>Program</h3>
+                </div>
+                <div class="program-content">
+                    <a href="#pop1" class="program">
+                        <img src="./asset/프로그램/1.jpg" alt="프로그램1" title="프로그램1">
+                        <div class="program-info">
+                            <h3>피아니스트 김미정과 함께하는 힐링 클래식</h3>
+                        </div>
+                    </a>
+                    <a href="#pop2" class="program">
+                        <img src="./asset/프로그램/2.png" alt="프로그램2" title="프로그램2">
+                        <div class="program-info">
+                            <h3>도란도란] 나를 찾아가는 마음챙김 그림책테라피</h3>
+                        </div>
+                    </a>
+                    <a href="#pop3" class="program">
+                        <img src="./asset/프로그램/3.jpg" alt="프로그램3" title="프로그램3">
+                        <div class="program-info">
+                            <h3>신흥어울마당작은]2024년 하반기 프로그램 ' 뚝딱 한국사'</h3>
+                        </div>
+                    </a>
+                    <a href="#pop4" class="program">
+                        <img src="./asset/프로그램/4.png" alt="프로그램4" title="프로그램4">
+                        <div class="program-info">
+                            <h3>[수주](성인)마을미디어 교육생 모집</h3>
+                        </div>
+                    </a>
+                    <a href="#pop5" class="program">
+                        <img src="./asset/프로그램/5.jpg" alt="프로그램5" title="프로그램5">
+                        <div class="program-info">
+                            <h3>나를 치유하는 명화</h3>
+                        </div>
+                    </a>
+                    <a href="#pop6" class="program">
+                        <img src="./asset/프로그램/6.jpg" alt="프로그램6" title="프로그램6">
+                        <div class="program-info">
+                            <h3>[문화가 있는 날] 푸른 하늘이 좋아요!</h3>
+                        </div>
+                    </a>
+                    <a href="#pop7" class="program">
+                        <img src="./asset/프로그램/7.jpg" alt="프로그램7" title="프로그램7">
+                        <div class="program-info">
+                            <h3>책 속에서 사람을 만나다 </h3>
+                        </div>
+                    </a>
+                    <a href="#pop8" class="program">
+                        <img src="./asset/프로그램/8.jpg" alt="프로그램8" title="프로그램8">
+                        <div class="program-info">
+                            <h3>서울 문화의 밤(8월) 행사 - 국지승 그림책 작가와 방구석 북토크</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="pop1" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/1.jpg" alt="프로그램1" title="프로그램1">
+                    <p>피아니스트 김미정과 함께하는 힐링 클래식</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop2" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/2.png" alt="프로그램2" title="프로그램2">
+                    <p>도란도란] 나를 찾아가는 마음챙김 그림책테라피</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop3" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/3.jpg" alt="프로그램3" title="프로그램3">
+                    <p>신흥어울마당작은]2024년 하반기 프로그램 ' 뚝딱 한국사'</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop4" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/4.png" alt="프로그램4" title="프로그램4">
+                    <p>[수주](성인)마을미디어 교육생 모집</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop5" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/5.jpg" alt="프로그램5" title="프로그램5">
+                    <p>나를 치유하는 명화</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop6" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/6.jpg" alt="프로그램6" title="프로그램6">
+                    <p>[문화가 있는 날] 푸른 하늘이 좋아요!</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop7" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/7.jpg" alt="프로그램7" title="프로그램7">
+                    <p>책 속에서 사람을 만나다 </p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+            <div id="pop8" class="pro-popup">
+                <div class="pro-content">
+                    <img src="./asset/프로그램/8.jpg" alt="프로그램8" title="프로그램8">
+                    <p>서울 문화의 밤(8월) 행사 - 국지승 그림책 작가와 방구석 북토크</p>
+                    <a href="#close" class="close-btn gb">닫기</a>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="inner-content">
+                <div class="title-box">
+                    <p>일정 안내</p>
+                    <h3>Event Calendar</h3>
+                </div>
+                <div class="calendar-controller">
+                    <select>
+                        <option value="2025">2025</option>
+                        <option value="2026" selected>2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                    <select>
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4" selected>4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                </div>
+                <div class="calendar-content">
+                    <div class="calendar-header yb">
+                        <div class="day-title">일</div>
+                        <div class="day-title">월</div>
+                        <div class="day-title">화</div>
+                        <div class="day-title">수</div>
+                        <div class="day-title">목</div>
+                        <div class="day-title">금</div>
+                        <div class="day-title">토</div>
+                    </div>
+                    <div class="calendar-main">
+                        <div class="day over-day">29</div>
+                        <div class="day over-day">30</div>
+                        <div class="day over-day">31</div>
+                        <div class="day">1
+                            <div class="sche">전시[책피는숙련도서관] 4월 북큐레이션</div>
+                        </div>
+                        <div class="day">2</div>
+                        <div class="day">3
+                            <div class="sche">전시[책피는숙련도서관] 4월 북큐레이션</div>
+                        </div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6
+                            <div class="sche">휴관 정기휴관일</div>
+                        </div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10
+                            <div class="sche">숙련기술인과의 만남</div>
+                        </div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13
+                            <div class="sche">휴관정기휴관일</div>
+                        </div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17
+                            <div class="sche">행사 책읽는 숙련광장</div>
+                            <div class="sche">행사 기능 책마당</div>
+                            <div class="sche">행사 책읽는 숙련기술</div>
+                            <div class="sche">전시 [책피는 숙련기술도서관] 4월 북큐레이션</div>
+                        </div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20
+                            <div class="sche">휴관정기휴관일</div>
+                        </div>
+                        <div class="day">21
+                            <div class="sche">행사 숙련기술 책마당</div>
+                            <div class="sche">행사 책읽는 맑은냇가</div>
+                            <div class="sche">행사 책읽는 숙련광장</div>
+                            <div class="sche">전시 [책피는 숙련기술도서관] 4월 북큐레이션</div>
+                        </div>
+                        <div class="day">22</div>
+                        <div class="day">23</div>
+                        <div class="day">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                        <div class="day over-day">1</div>
+                        <div class="day over-day">2</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="inner-content">
+                <div class="title-box">
+                    <p>추천 도서</p>
+                    <h3>Best Sellers</h3>
+                </div>
+                <div class="book-slide">
+                    <input type="radio" name="book" id="b1" hidden checked>
+                    <input type="radio" name="book" id="b2" hidden>
+                    <input type="radio" name="book" id="b3" hidden>
+                    <input type="radio" name="book" id="b4" hidden>
+                    <input type="radio" name="book" id="b5" hidden>
+                    <input type="radio" name="book" id="b6" hidden>
+                    <input type="radio" name="book" id="b7" hidden>
+                    <ul>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서1.jpg" alt="추천도서1" title="추천도서1">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 1</span>
+                                    <h3>나에게 나다움을 주기로 했다 : 나다움을 찾아가는 다섯 가지 마음 습관</h3>
+                                    <p>지은이 : 고정욱</p>
+                                    <p>me and you sit amet consectetur, adipisicing elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서2.jpg" alt="추천도서2" title="추천도서2">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 2</span>
+                                    <h3>여름이 반짝</h3>
+                                    <p>지은이 : 김수빈 </p>
+                                    <p>summer is lighting, adipisicing elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서3.jpg" alt="추천도서3" title="추천도서3">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 3</span>
+                                    <h3>사랑 한 꼬집을 넣으면</h3>
+                                    <p>지은이 : 배리 팀스</p>
+                                    <p>one spoon, that is a love consectetur, adipisicing elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서4.jpg" alt="추천도서4" title="추천도서4">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 4</span>
+                                    <h3>정말 정말 소리 지르고 싶어!</h3>
+                                    <p>지은이 : 사이먼 필립</p>
+                                    <p>very angry, but I'm relax consectetur, adipisicing elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서5.jpg" alt="추천도서5" title="추천도서5">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 5</span>
+                                    <h3>힐빌리의 노래 : 위기의 가정과 문화에 대한 회고</h3>
+                                    <p>지은이 : J.D 밴스</p>
+                                    <p>my parent about elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서6.jpg" alt="추천도서6" title="추천도서6">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 6</span>
+                                    <h3>(허영만의) 커피 한잔 할까요?</h3>
+                                    <p>지은이 : 허영만</p>
+                                    <p>take coffee, that is a good amet consectetur, adipisicing elit. Dolores,
+                                        expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="best-book">
+                                <img src="./asset/추천도서/추천도서7.jpg" alt="추천도서7" title="추천도서7">
+                                <div class="best-book-info">
+                                    <span class="gb">추천도서 7</span>
+                                    <h3>두더지의 여름: 김상근 그림책</h3>
+                                    <p>지은이 : 김상근</p>
+                                    <p>you summer so cool consectetur, adipisicing elit. Dolores, expedita.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="book-controller book-controll1"><label class="yb"
+                            for="b7">◀</label><span>1/7</span><label class="yb" for="b2">▶</label></div>
+                    <div class="book-controller book-controll2"><label class="yb"
+                            for="b1">◀</label><span>2/7</span><label class="yb" for="b3">▶</label></div>
+                    <div class="book-controller book-controll3"><label class="yb"
+                            for="b2">◀</label><span>3/7</span><label class="yb" for="b4">▶</label></div>
+                    <div class="book-controller book-controll4"><label class="yb"
+                            for="b3">◀</label><span>4/7</span><label class="yb" for="b5">▶</label></div>
+                    <div class="book-controller book-controll5"><label class="yb"
+                            for="b4">◀</label><span>5/7</span><label class="yb" for="b6">▶</label></div>
+                    <div class="book-controller book-controll6"><label class="yb"
+                            for="b5">◀</label><span>6/7</span><label class="yb" for="b7">▶</label></div>
+                    <div class="book-controller book-controll7"><label class="yb"
+                            for="b6">◀</label><span>7/7</span><label class="yb" for="b1">▶</label></div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer class="gb">
+        <div class="footer-content">
+            <div class="top-ft ">
+                <div class="logo">
+                    <img src="./asset/gimp/logo.png" alt="푸터 로고" title="푸터 로고">
+                </div>
+                <div class="ft-con">
+                    <div class="cl-box">
+                        <p><span>문의전화안내</span> 1644-8000</p>
+                        <p><span>운영시간(평일)</span> 09:00~18:00</p>
+                    </div>
+                    <div class="cl-box">
+                        <p>인천시 부평구 무네미로 448번길 77</p>
+                        <p>한국산업인력공단 글로벌숙련기술진흥원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bot-ft">
+                <p>COPYRIGHTⓒ 2016 HRDKOREA</p>
+                <div class="ft-icon">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

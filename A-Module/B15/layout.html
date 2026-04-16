@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV 파일 페이지네이션</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .file-upload {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .file-upload input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .upload-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .records-per-page {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .records-per-page select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .pagination button:hover {
+            background-color: #f5f5f5;
+        }
+
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination .page-info {
+            margin: 0 10px;
+            color: #666;
+            pointer-events: none;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .sample-file {
+            margin-top: 10px;
+        }
+
+        .sample-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .sample-btn:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+
+            .pagination {
+                gap: 5px;
+            }
+
+            .pagination button {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSV 파일 페이지네이션</h1>
+
+        <div class="table-container">
+            <table id="dataTable" style="display: table;">
+                <thead id="tableHeader">
+                    <tr>
+                        <th>이름</th>
+                        <th>나이</th>
+                        <th>직업</th>
+                        <th>도시</th>
+                        <th>급여</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>박준영</td>
+                        <td>26</td>
+                        <td>기획자</td>
+                        <td>부산</td>
+                        <td>4400000</td>
+                    </tr>
+                    <tr>
+                        <td>정은성</td>
+                        <td>33</td>
+                        <td>개발자</td>
+                        <td>대구</td>
+                        <td>5700000</td>
+                    </tr>
+                    <tr>
+                        <td>최민정</td>
+                        <td>28</td>
+                        <td>디자이너</td>
+                        <td>인천</td>
+                        <td>4200000</td>
+                    </tr>
+                    <tr>
+                        <td>강준서</td>
+                        <td>29</td>
+                        <td>영업</td>
+                        <td>광주</td>
+                        <td>4500000</td>
+                    </tr>
+                    <tr>
+                        <td>윤서현</td>
+                        <td>31</td>
+                        <td>관리자</td>
+                        <td>대전</td>
+                        <td>6000000</td>
+                    </tr>
+                    <tr>
+                        <td>배성호</td>
+                        <td>24</td>
+                        <td>인턴</td>
+                        <td>서울</td>
+                        <td>2900000</td>
+                    </tr>
+                    <tr>
+                        <td>홍다영</td>
+                        <td>35</td>
+                        <td>개발자</td>
+                        <td>부산</td>
+                        <td>6300000</td>
+                    </tr>
+                    <tr>
+                        <td>김현우</td>
+                        <td>26</td>
+                        <td>디자이너</td>
+                        <td>대구</td>
+                        <td>4100000</td>
+                    </tr>
+                    <tr>
+                        <td>이소라</td>
+                        <td>32</td>
+                        <td>마케터</td>
+                        <td>인천</td>
+                        <td>4100000</td>
+                    </tr>
+                    <tr>
+                        <td>박지훈</td>
+                        <td>28</td>
+                        <td>기획자</td>
+                        <td>광주</td>
+                        <td>4600000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination"><button class="prev-btn">이전</button><button
+                class="pagination-btn">1</button><button class="pagination-btn">2</button><button
+                class="pagination-btn">3</button><button class="pagination-btn">4</button><button
+                class="pagination-btn">5</button><button class="next-btn">다음</button></div>
+    </div>
+
+</body>
+<script>
+    async function data() {
+        const $ = (e) => document.querySelector(e)
+        const $$ = (e) => [...document.querySelectorAll(e)]
+
+        let state = { page: 1, limit: 10 }
+
+        const datas = await fetch("./sample-data.csv").then(res => res.text())
+        const rows = datas.split("\n").slice(1).map(line => `<tr>${line.split(",").map(ceil => `<td>${ceil}</td>`).join("")}</tr>`)
+
+        const tbody = $("tbody")
+        const pageBtns = $$(".pagination-btn")
+        const prevBtn = $(".prev-btn")
+        const nextBtn = $(".next-btn")
+
+        function setState(newState) {
+            state = { ...state, ...newState }
+            render()
+        }
+
+        pageBtns.forEach(btn => btn.onclick = () => {
+            setState({ page: Number(btn.textContent) })
+        })
+        prevBtn.onclick = () => {
+            setState({ page: state.page - 1 })
+        }
+        nextBtn.onclick = () => {
+            setState({ page: state.page + 1 })
+        }
+
+        function render() {
+            const range = state.limit * (state.page - 1)
+            tbody.innerHTML = rows.slice(range, range + state.limit).join("")
+            prevBtn.disabled = state.page === 1
+            nextBtn.disabled = state.page === 5
+
+            pageBtns.forEach((btn, i) => {
+                btn.classList.remove('active')
+                btn.classList.remove('page-info')
+                btn.textContent = i + 1
+
+                if (state.page === i + 1) btn.classList.add('active')
+                if (state.page === 1 && i === 3 || state.page === 5 && i === 1) {
+                    btn.classList.add('page-info')
+                    btn.textContent = "..."
+                }
+            })
+        }
+        render()
+    }
+    data()
+</script>
+
+</html>
