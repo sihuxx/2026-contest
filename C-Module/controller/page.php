@@ -55,7 +55,7 @@ post("/rental", function () {
     if (empty($user)) {
         back("로그인 후 이용 가능합니다");
     } else {
-        db::exec("insert into rentals (book_idx, user_idx, return_date) values ('$idx', '$user->idx', curdate() + 9)");
+        db::exec("insert into rentals (book_idx, user_idx, return_date, rental_date) values ('$idx', '$user->idx', curdate() + 9), curdate()");
         move('/data', "대여 성공");
     }
 });
